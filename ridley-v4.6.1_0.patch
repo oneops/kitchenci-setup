@@ -1,0 +1,12 @@
+*** /home/phuynh/.gem/ruby/2.0.0/gems/ridley-4.6.1/lib/ridley/chef/cookbook/metadata.rb	2017-07-07 07:30:19.709193102 -0700
+--- lib/ridley/chef/cookbook/metadata.rb	2017-07-05 08:14:43.670821030 -0700
+***************
+*** 245,250 ****
+--- 245,251 ----
+        # === Returns
+        # name<String>:: Returns the current cookbook name.
+        def name(arg = nil)
++         arg = arg.nil? ? nil : arg.downcase
+          set_or_return(
+            :name,
+            arg,

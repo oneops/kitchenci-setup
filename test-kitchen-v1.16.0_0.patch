@@ -1,0 +1,14 @@
+*** /home/phuynh/.gem/ruby/2.0.0/gems/test-kitchen-1.16.0/lib/kitchen/provisioner/chef/common_sandbox.rb	2017-07-07 07:30:19.413190068 -0700
+--- lib/kitchen/provisioner/chef/common_sandbox.rb	2017-07-02 05:52:52.241607528 -0700
+***************
+*** 150,155 ****
+--- 150,158 ----
+                                                                          "The metadata.rb does not define the 'name' key." \
+                                                                            " Please add: `name '<cookbook_name>'` to metadata.rb and retry")
+  
++           # convert the cookbook name from uppercase to lowercase
++           cb_name.downcase!
++ 
+            cb_path = File.join(tmpbooks_dir, cb_name)
+  
+            glob = Dir.glob("#{config[:kitchen_root]}/**")

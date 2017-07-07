@@ -1,0 +1,14 @@
+*** /home/phuynh/.gem/ruby/2.0.0/gems/berkshelf-4.3.5/lib/berkshelf.rb	2017-07-07 07:30:19.793193963 -0700
+--- lib/berkshelf.rb	2017-07-06 07:26:43.292431575 -0700
+***************
+*** 1,3 ****
+--- 1,9 ----
++ # XXX: work around logger spam from hashie
++ # https://github.com/intridea/hashie/issues/394
++ require "hashie"
++ require "hashie/logger"
++ Hashie.logger = Logger.new(nil)
++ 
+  require 'buff/extensions'
+  require 'cleanroom'
+  require 'digest/md5'
