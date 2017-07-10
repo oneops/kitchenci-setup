@@ -14,8 +14,8 @@ Running kitchen in older version will produce harmless but uncessary noises such
   W, [2017-07-07T05:18:21.738521 #36214]  WARN -- : You are setting a key that conflicts with a built-in method VariaModel::Attributes#default defined in Hash. This can cause unexpected behavior when accessing the key via as a property. You can still access the key via the #[] method.
 
 
-To suppress this message apply the patch for berksfile which has the following code changes::
-
+To suppress this message apply the patch for berksfile which has the following code changes
+.. code-block:: ruby
     require "hashie"
     require "hashie/logger"
     Hashie.logger = Logger.new(nil)
