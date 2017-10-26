@@ -1,5 +1,7 @@
 #!/bin/bash
 
+yum install -y patch
+
 echo -n "Detecting Ruby Version: "
 
 ruby=`which ruby`
@@ -21,7 +23,7 @@ fi
 
 echo -e "Installing kitchen.ci using Bundler\n"
 
-bundle install --force
+bundle install --local
 
 if [[ $? == 0 ]]; then
   echo "Successfully installed test-kitchen with bundler"
@@ -34,7 +36,7 @@ CWD=$(pwd)
 
 BERKS=$(gem path berkshelf)
 RIDLEY=$(gem path ridley)
-KITCHEN=$(gem path test-kitchen)
+KITCHEN=$(gem path kitchen)
 
 echo "Start patching files ..."
 
