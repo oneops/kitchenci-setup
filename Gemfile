@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'json', '=1.8.6'
+gem 'public_suffix', '=2.0.5'
+gem 'mixlib-shellout', '=2.2.7'
 gem 'test-kitchen', '=1.16.0'
 gem 'buff-extensions', '=1.0.0'
 gem 'nio4r', '=1.2.1'
